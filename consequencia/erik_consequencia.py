@@ -34,6 +34,7 @@ def salvar_desejos(lista_de_desejos):
         print(f"Seus desejos foram salvos com sucesso!")
     except Exception as e:
         print(f"Ocorreu um erro ao salvar os seus desejos: {e}")
+        
 while True:
     print("\n--- O que você gostaria de fazer?---")
     print("1. Adicionar um novo desejo")
@@ -43,8 +44,9 @@ while True:
     opcao = input("1, 2 ou 3? ")
     
     if opcao == '1':
-        novo_desejo = input("Qual é o seu novo desejo?")
-        if novo_desejo.strip() == "":
+        novo_desejo = input("Qual é o seu novo desejo? ")
+        print(f"DEBUG: Você digitou -> '{novo_desejo}'")
+        if novo_desejo.strip() != "":
             desejos.append(novo_desejo.strip())
             salvar_desejos(desejos)
         else:
@@ -65,5 +67,3 @@ while True:
         break
     else:
         print("Opção inválida! Por favor, escolha 1, 2 ou 3.")
-        
-        
